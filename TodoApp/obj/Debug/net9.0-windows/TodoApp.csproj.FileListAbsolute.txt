@@ -1,0 +1,14 @@
+D:\mytodo\mytodo-windforms\TodoApp\bin\Debug\net9.0-windows\TodoApp.exe
+D:\mytodo\mytodo-windforms\TodoApp\bin\Debug\net9.0-windows\TodoApp.deps.json
+D:\mytodo\mytodo-windforms\TodoApp\bin\Debug\net9.0-windows\TodoApp.runtimeconfig.json
+D:\mytodo\mytodo-windforms\TodoApp\bin\Debug\net9.0-windows\TodoApp.dll
+D:\mytodo\mytodo-windforms\TodoApp\bin\Debug\net9.0-windows\TodoApp.pdb
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.AssemblyInfoInputs.cache
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.AssemblyInfo.cs
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.csproj.CoreCompileInputs.cache
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.dll
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\refint\TodoApp.dll
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.pdb
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\TodoApp.genruntimeconfig.cache
+D:\mytodo\mytodo-windforms\TodoApp\obj\Debug\net9.0-windows\ref\TodoApp.dll
