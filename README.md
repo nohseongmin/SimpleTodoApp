@@ -2,8 +2,6 @@
 
 Windows Forms 기반의 이모지 체크박스 TODO 앱입니다.
 
-# SimpleTodoApp
-
 ## 주요 기능
 - 🟥/✅ 이모지 체크박스 표시
 - 날짜 클릭 시 바로 수정 가능(DatePicker)
