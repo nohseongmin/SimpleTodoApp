@@ -10,14 +10,29 @@ namespace TodoApp
     public class TodoManager
     {
         private readonly string _filePath;
+        public enum StorageLocation { AppData, ProgramFiles }
+        public static string GetPath(StorageLocation loc)
+        {
+            if (loc == StorageLocation.ProgramFiles)
+                return Path.Combine("C:\\Program Files (x86)\\todo", "list.md");
+            else
+                return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "TodoApp", "list.md");
+        }
         public List<TodoItem> Items { get; private set; }
 
-        public TodoManager()
+        public TodoManager(StorageLocation location = StorageLocation.AppData)
         {
-            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string appDirectory = Path.Combine(appDataPath, "TodoApp");
-            Directory.CreateDirectory(appDirectory);
-            _filePath = Path.Combine(appDirectory, "list.md");
+            _filePath = GetPath(location);
+            if (location == StorageLocation.ProgramFiles)
+            {
+                var dir = Path.GetDirectoryName(_filePath);
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir!);
+            }
+            else
+            {
+                var dir = Path.GetDirectoryName(_filePath);
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir!);
+            }
             Items = new List<TodoItem>();
         }
 
