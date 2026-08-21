@@ -84,13 +84,13 @@ namespace TodoApp
             var trimmedLine = line.TrimStart('\t');
             item.IndentLevel = line.Length - trimmedLine.Length;
 
-            var match = Regex.Match(trimmedLine, @"^\s*\[( |x|X)\]\s+(\d{{4}})\s+(.*)");
+            var match = Regex.Match(trimmedLine, @"^\s*\[( |x|X)\]\s+(\d{4})\s+(.*)");
             if (match.Success)
             {
                 item.IsComplete = match.Groups[1].Value.Equals("x", StringComparison.OrdinalIgnoreCase);
                 
                 string dateStr = match.Groups[2].Value;
-                if (DateTime.TryParseExact($"{dateStr}/{{DateTime.Now.Year}}", "MMdd/yyyy", null, System.Globalization.DateTimeStyles.None, out var date))
+                if (DateTime.TryParseExact($"{dateStr}/{DateTime.Now.Year}", "MMdd/yyyy", null, System.Globalization.DateTimeStyles.None, out var date))
                 {
                     item.DueDate = date;
                 }
