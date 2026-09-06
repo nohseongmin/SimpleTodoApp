@@ -23,7 +23,7 @@ namespace TodoApp
             builder.Append(new string('	', IndentLevel));
             builder.Append(IsComplete ? "[x]" : "[ ]");
             builder.Append(" ");
-            builder.Append(DueDate.ToString("MMdd"));
+            builder.Append(DueDate.ToString("yyyyMMdd"));
             builder.Append(" ");
             builder.Append(Text);
             return builder.ToString();
