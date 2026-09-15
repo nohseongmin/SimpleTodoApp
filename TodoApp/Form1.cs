@@ -52,6 +52,7 @@ public partial class Form1 : Form
         {
             item.IsComplete = !item.IsComplete;
             todoListBox.Invalidate();
+            _todoManager.SaveItems();
         }
         else
         {
@@ -70,11 +71,13 @@ public partial class Form1 : Form
                         item.Text = editForm.TodoText;
                         _todoManager.SortItemsByDate();
                         PopulateList();
+                        _todoManager.SaveItems();
                     }
                     else if (dialogResult == DialogResult.Abort)
                     {
                         _todoManager.Items.RemoveAt(idx);
                         PopulateList();
+                        _todoManager.SaveItems();
                     }
                 }
             }
@@ -124,10 +127,11 @@ public partial class Form1 : Form
             var newItem = new TodoItem { Text = text };
             _todoManager.Items.Add(newItem);
             _todoManager.SortItemsByDate();
-            
+
             newItemTextBox.Clear();
             PopulateList();
             todoListBox.TopIndex = todoListBox.Items.Count - 1;
+            _todoManager.SaveItems();
             e.SuppressKeyPress = true;
         }
     }
@@ -225,6 +229,7 @@ public partial class Form1 : Form
             PopulateList();
             foreach (int idx in selected)
                 todoListBox.SetSelected(idx, true);
+            _todoManager.SaveItems();
             e.Handled = true;
         }
         else if (e.KeyCode == Keys.Delete && todoListBox.SelectedIndex >= 0)
@@ -234,6 +239,7 @@ public partial class Form1 : Form
                 _todoManager.Items.RemoveAt(todoListBox.SelectedIndices[i]);
             }
             PopulateList();
+            _todoManager.SaveItems();
         }
     }
 
@@ -257,11 +263,13 @@ public partial class Form1 : Form
                     item.Text = editForm.TodoText;
                     _todoManager.SortItemsByDate();
                     PopulateList();
+                    _todoManager.SaveItems();
                 }
                 else if (dialogResult == DialogResult.Abort)
                 {
                     _todoManager.Items.RemoveAt(index);
                     PopulateList();
+                    _todoManager.SaveItems();
                 }
             }
         }
