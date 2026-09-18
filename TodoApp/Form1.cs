@@ -10,6 +10,7 @@ public partial class Form1 : Form
     private readonly TodoManager? _todoManager;
     private Font _defaultFont = new Font("Segoe UI", 12F);
     private Font? _strikethroughFont;
+    private readonly Font _emojiFont = new Font("Segoe UI Emoji", 16F);
 
     [DllImport("dwmapi.dll", CharSet = CharSet.Unicode, PreserveSig = false)]
     internal static extern void DwmSetWindowAttribute(IntPtr hwnd, DWMWINDOWATTRIBUTE attribute, ref int pvAttribute, uint cbAttribute);
@@ -107,7 +108,7 @@ public partial class Form1 : Form
         string emoji = item.IsComplete ? "✅" : "🟥";
         int indent = item.IndentLevel * 24;
         e.DrawBackground();
-        TextRenderer.DrawText(e.Graphics, emoji, new Font("Segoe UI Emoji", 16F), new System.Drawing.Point(e.Bounds.Left + indent, e.Bounds.Top + 2), this.ForeColor);
+        TextRenderer.DrawText(e.Graphics, emoji, _emojiFont, new System.Drawing.Point(e.Bounds.Left + indent, e.Bounds.Top + 2), this.ForeColor);
         string text = $" {item.DueDate:MMdd} {item.Text}";
         TextRenderer.DrawText(e.Graphics, text, font, new System.Drawing.Point(e.Bounds.Left + indent + 32, e.Bounds.Top + 4), this.ForeColor);
         if ((e.State & DrawItemState.Focus) == DrawItemState.Focus)
